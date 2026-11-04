@@ -4,7 +4,11 @@ mod common;
 fn fixture_repo_pins_line_endings_and_modes() {
     let repo = common::fixture_repo();
     for key in ["core.autocrlf", "core.filemode"] {
-        assert_eq!(common::git(repo.path(), &["config", key]).trim(), "false", "{key}");
+        assert_eq!(
+            common::git(repo.path(), &["config", key]).trim(),
+            "false",
+            "{key}"
+        );
     }
 }
 
